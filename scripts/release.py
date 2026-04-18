@@ -264,6 +264,7 @@ AUTHOR_MAP = {
     "asurla@nvidia.com": "anniesurla",
     "limkuan24@gmail.com": "WideLee",
     "aviralarora002@gmail.com": "AviArora02-commits",
+    "levantam.98.2324@gmail.com": "LVT382009",
 }
 
 
