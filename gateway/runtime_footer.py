@@ -330,6 +330,7 @@ def build_footer_line(
     account_label: Optional[str] = None,
     account_usage: Any = None,
     reasoning_effort: Optional[str] = None,
+    resolved_config: Optional[dict[str, Any]] = None,
 ) -> str:
     """Top-level entry point used by gateway/run.py.
 
@@ -337,7 +338,11 @@ def build_footer_line(
     append this to the final response themselves, preserving a single blank
     line of separation.
     """
-    cfg = resolve_footer_config(user_config, platform_key)
+    cfg = (
+        resolved_config
+        if isinstance(resolved_config, dict)
+        else resolve_footer_config(user_config, platform_key)
+    )
     if not cfg.get("enabled"):
         return ""
     return format_runtime_footer(
